@@ -1,6 +1,6 @@
 {
   "name": "ng2-validation-nor",
-  "version": "4.2.15",
+  "version": "4.2.16",
   "description": "angular2 validation",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shaher/angular2-validate.git"
+    "url": "git+https://github.com/shaher/ng2-validation"
   },
   "keywords": [
     "angular2",
@@ -27,9 +27,9 @@
   "author": "Shaher <shaher@inorsoft.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shaher/angular2-validate/issues"
+    "url": "https://github.com/shaher/ng2-validation/issues"
   },
-  "homepage": "https://github.com/shaher/angular2-validate#readme",
+  "homepage": "https://github.com/shaher/ng2-validation#readme",
   "devDependencies": {
     "@angular/common": "4.0.0",
     "@angular/compiler": "4.0.0",
