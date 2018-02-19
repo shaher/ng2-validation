@@ -1,8 +1,8 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/forms'), require('libphonenumber-js')) :
-	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@angular/forms', 'libphonenumber-js'], factory) :
-	(factory((global.ng = global.ng || {}, global.ng.validation = global.ng.validation || {}),global.ng.core,global.ng.forms,global.libphonenumberJs));
-}(this, (function (exports,_angular_core,_angular_forms,libphonenumberJs) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/forms')) :
+	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@angular/forms'], factory) :
+	(factory((global.ng = global.ng || {}, global.ng.validation = global.ng.validation || {}),global.ng.core,global.ng.forms));
+}(this, (function (exports,_angular_core,_angular_forms) { 'use strict';
 
 function __decorate(decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -20,20 +20,20 @@ var BASE64_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return Base64Validator$$1; }),
     multi: true
 };
-var Base64Validator$$1 = (function () {
+var Base64Validator$$1 = /** @class */ (function () {
     function Base64Validator$$1() {
     }
     Base64Validator$$1.prototype.validate = function (c) {
         return base64(c);
     };
+    Base64Validator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[base64][formControlName],[base64][formControl],[base64][ngModel]',
+            providers: [BASE64_VALIDATOR]
+        })
+    ], Base64Validator$$1);
     return Base64Validator$$1;
 }());
-Base64Validator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[base64][formControlName],[base64][formControl],[base64][ngModel]',
-        providers: [BASE64_VALIDATOR]
-    })
-], Base64Validator$$1);
 
 function isPresent(obj) {
     return obj !== undefined && obj !== null;
@@ -54,20 +54,20 @@ var CREDIT_CARD_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return CreditCardValidator$$1; }),
     multi: true
 };
-var CreditCardValidator$$1 = (function () {
+var CreditCardValidator$$1 = /** @class */ (function () {
     function CreditCardValidator$$1() {
     }
     CreditCardValidator$$1.prototype.validate = function (c) {
         return creditCard(c);
     };
+    CreditCardValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[creditCard][formControlName],[creditCard][formControl],[creditCard][ngModel]',
+            providers: [CREDIT_CARD_VALIDATOR]
+        })
+    ], CreditCardValidator$$1);
     return CreditCardValidator$$1;
 }());
-CreditCardValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[creditCard][formControlName],[creditCard][formControl],[creditCard][ngModel]',
-        providers: [CREDIT_CARD_VALIDATOR]
-    })
-], CreditCardValidator$$1);
 
 var creditCard = function (control) {
     if (isPresent(_angular_forms.Validators.required(control)))
@@ -110,20 +110,20 @@ var DATE_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return DateValidator$$1; }),
     multi: true
 };
-var DateValidator$$1 = (function () {
+var DateValidator$$1 = /** @class */ (function () {
     function DateValidator$$1() {
     }
     DateValidator$$1.prototype.validate = function (c) {
         return date(c);
     };
+    DateValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[date][formControlName],[date][formControl],[date][ngModel]',
+            providers: [DATE_VALIDATOR]
+        })
+    ], DateValidator$$1);
     return DateValidator$$1;
 }());
-DateValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[date][formControlName],[date][formControl],[date][ngModel]',
-        providers: [DATE_VALIDATOR]
-    })
-], DateValidator$$1);
 
 var date = function (control) {
     if (isPresent(_angular_forms.Validators.required(control)))
@@ -137,20 +137,20 @@ var DATE_ISO_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return DateISOValidator$$1; }),
     multi: true
 };
-var DateISOValidator$$1 = (function () {
+var DateISOValidator$$1 = /** @class */ (function () {
     function DateISOValidator$$1() {
     }
     DateISOValidator$$1.prototype.validate = function (c) {
         return dateISO(c);
     };
+    DateISOValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[dateISO][formControlName],[dateISO][formControl],[dateISO][ngModel]',
+            providers: [DATE_ISO_VALIDATOR]
+        })
+    ], DateISOValidator$$1);
     return DateISOValidator$$1;
 }());
-DateISOValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[dateISO][formControlName],[dateISO][formControl],[dateISO][ngModel]',
-        providers: [DATE_ISO_VALIDATOR]
-    })
-], DateISOValidator$$1);
 
 var dateISO = function (control) {
     if (isPresent(_angular_forms.Validators.required(control)))
@@ -164,20 +164,20 @@ var DIGITS_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return DigitsValidator$$1; }),
     multi: true
 };
-var DigitsValidator$$1 = (function () {
+var DigitsValidator$$1 = /** @class */ (function () {
     function DigitsValidator$$1() {
     }
     DigitsValidator$$1.prototype.validate = function (c) {
         return digits(c);
     };
+    DigitsValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[digits][formControlName],[digits][formControl],[digits][ngModel]',
+            providers: [DIGITS_VALIDATOR]
+        })
+    ], DigitsValidator$$1);
     return DigitsValidator$$1;
 }());
-DigitsValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[digits][formControlName],[digits][formControl],[digits][ngModel]',
-        providers: [DIGITS_VALIDATOR]
-    })
-], DigitsValidator$$1);
 
 var digits = function (control) {
     if (isPresent(_angular_forms.Validators.required(control)))
@@ -191,20 +191,20 @@ var EMAIL_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return EmailValidator$$1; }),
     multi: true
 };
-var EmailValidator$$1 = (function () {
+var EmailValidator$$1 = /** @class */ (function () {
     function EmailValidator$$1() {
     }
     EmailValidator$$1.prototype.validate = function (c) {
         return email(c);
     };
+    EmailValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[email][formControlName],[email][formControl],[email][ngModel]',
+            providers: [EMAIL_VALIDATOR]
+        })
+    ], EmailValidator$$1);
     return EmailValidator$$1;
 }());
-EmailValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[email][formControlName],[email][formControl],[email][ngModel]',
-        providers: [EMAIL_VALIDATOR]
-    })
-], EmailValidator$$1);
 
 var email = function (control) {
     if (isPresent(_angular_forms.Validators.required(control)))
@@ -218,7 +218,7 @@ var EQUAL_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return EqualValidator$$1; }),
     multi: true
 };
-var EqualValidator$$1 = (function () {
+var EqualValidator$$1 = /** @class */ (function () {
     function EqualValidator$$1() {
     }
     EqualValidator$$1.prototype.ngOnInit = function () {
@@ -239,18 +239,18 @@ var EqualValidator$$1 = (function () {
     EqualValidator$$1.prototype.registerOnValidatorChange = function (fn) {
         this.onChange = fn;
     };
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", Object)
+    ], EqualValidator$$1.prototype, "equal", void 0);
+    EqualValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[equal][formControlName],[equal][formControl],[equal][ngModel]',
+            providers: [EQUAL_VALIDATOR]
+        })
+    ], EqualValidator$$1);
     return EqualValidator$$1;
 }());
-__decorate([
-    _angular_core.Input(),
-    __metadata("design:type", Object)
-], EqualValidator$$1.prototype, "equal", void 0);
-EqualValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[equal][formControlName],[equal][formControl],[equal][ngModel]',
-        providers: [EQUAL_VALIDATOR]
-    })
-], EqualValidator$$1);
 
 var equal = function (val) {
     return function (control) {
@@ -266,7 +266,7 @@ var EQUAL_TO_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return EqualToValidator$$1; }),
     multi: true
 };
-var EqualToValidator$$1 = (function () {
+var EqualToValidator$$1 = /** @class */ (function () {
     function EqualToValidator$$1() {
     }
     EqualToValidator$$1.prototype.ngOnInit = function () {
@@ -275,19 +275,19 @@ var EqualToValidator$$1 = (function () {
     EqualToValidator$$1.prototype.validate = function (c) {
         return this.validator(c);
     };
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", typeof (_a = typeof _angular_forms.FormControl !== "undefined" && _angular_forms.FormControl) === "function" && _a || Object)
+    ], EqualToValidator$$1.prototype, "equalTo", void 0);
+    EqualToValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[equalTo][formControlName],[equalTo][formControl],[equalTo][ngModel]',
+            providers: [EQUAL_TO_VALIDATOR]
+        })
+    ], EqualToValidator$$1);
     return EqualToValidator$$1;
+    var _a;
 }());
-__decorate([
-    _angular_core.Input(),
-    __metadata("design:type", typeof (_a = typeof _angular_forms.FormControl !== "undefined" && _angular_forms.FormControl) === "function" && _a || Object)
-], EqualToValidator$$1.prototype, "equalTo", void 0);
-EqualToValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[equalTo][formControlName],[equalTo][formControl],[equalTo][ngModel]',
-        providers: [EQUAL_TO_VALIDATOR]
-    })
-], EqualToValidator$$1);
-var _a;
 
 var equalTo = function (equalControl) {
     var subscribe = false;
@@ -308,7 +308,7 @@ var GREATER_THAN_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return GreaterThanValidator$$1; }),
     multi: true
 };
-var GreaterThanValidator$$1 = (function () {
+var GreaterThanValidator$$1 = /** @class */ (function () {
     function GreaterThanValidator$$1() {
     }
     GreaterThanValidator$$1.prototype.ngOnInit = function () {
@@ -329,18 +329,18 @@ var GreaterThanValidator$$1 = (function () {
     GreaterThanValidator$$1.prototype.registerOnValidatorChange = function (fn) {
         this.onChange = fn;
     };
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", Number)
+    ], GreaterThanValidator$$1.prototype, "gt", void 0);
+    GreaterThanValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[gt][formControlName],[gt][formControl],[gt][ngModel]',
+            providers: [GREATER_THAN_VALIDATOR]
+        })
+    ], GreaterThanValidator$$1);
     return GreaterThanValidator$$1;
 }());
-__decorate([
-    _angular_core.Input(),
-    __metadata("design:type", Number)
-], GreaterThanValidator$$1.prototype, "gt", void 0);
-GreaterThanValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[gt][formControlName],[gt][formControl],[gt][ngModel]',
-        providers: [GREATER_THAN_VALIDATOR]
-    })
-], GreaterThanValidator$$1);
 
 var gt = function (gt) {
     return function (control) {
@@ -358,7 +358,7 @@ var GREATER_THAN_EQUAL_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return GreaterThanEqualValidator$$1; }),
     multi: true
 };
-var GreaterThanEqualValidator$$1 = (function () {
+var GreaterThanEqualValidator$$1 = /** @class */ (function () {
     function GreaterThanEqualValidator$$1() {
     }
     GreaterThanEqualValidator$$1.prototype.ngOnInit = function () {
@@ -379,18 +379,18 @@ var GreaterThanEqualValidator$$1 = (function () {
     GreaterThanEqualValidator$$1.prototype.registerOnValidatorChange = function (fn) {
         this.onChange = fn;
     };
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", Number)
+    ], GreaterThanEqualValidator$$1.prototype, "gte", void 0);
+    GreaterThanEqualValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[gte][formControlName],[gte][formControl],[gte][ngModel]',
+            providers: [GREATER_THAN_EQUAL_VALIDATOR]
+        })
+    ], GreaterThanEqualValidator$$1);
     return GreaterThanEqualValidator$$1;
 }());
-__decorate([
-    _angular_core.Input(),
-    __metadata("design:type", Number)
-], GreaterThanEqualValidator$$1.prototype, "gte", void 0);
-GreaterThanEqualValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[gte][formControlName],[gte][formControl],[gte][ngModel]',
-        providers: [GREATER_THAN_EQUAL_VALIDATOR]
-    })
-], GreaterThanEqualValidator$$1);
 
 var gte = function (gte) {
     return function (control) {
@@ -408,20 +408,20 @@ var JSON_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return JSONValidator$$1; }),
     multi: true
 };
-var JSONValidator$$1 = (function () {
+var JSONValidator$$1 = /** @class */ (function () {
     function JSONValidator$$1() {
     }
     JSONValidator$$1.prototype.validate = function (c) {
         return json(c);
     };
+    JSONValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[json][formControlName],[json][formControl],[json][ngModel]',
+            providers: [JSON_VALIDATOR]
+        })
+    ], JSONValidator$$1);
     return JSONValidator$$1;
 }());
-JSONValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[json][formControlName],[json][formControl],[json][ngModel]',
-        providers: [JSON_VALIDATOR]
-    })
-], JSONValidator$$1);
 
 var json = function (control) {
     if (isPresent(_angular_forms.Validators.required(control)))
@@ -443,7 +443,7 @@ var LESS_THAN_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return LessThanValidator$$1; }),
     multi: true
 };
-var LessThanValidator$$1 = (function () {
+var LessThanValidator$$1 = /** @class */ (function () {
     function LessThanValidator$$1() {
     }
     LessThanValidator$$1.prototype.ngOnInit = function () {
@@ -464,18 +464,18 @@ var LessThanValidator$$1 = (function () {
     LessThanValidator$$1.prototype.registerOnValidatorChange = function (fn) {
         this.onChange = fn;
     };
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", Number)
+    ], LessThanValidator$$1.prototype, "lt", void 0);
+    LessThanValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[lt][formControlName],[lt][formControl],[lt][ngModel]',
+            providers: [LESS_THAN_VALIDATOR]
+        })
+    ], LessThanValidator$$1);
     return LessThanValidator$$1;
 }());
-__decorate([
-    _angular_core.Input(),
-    __metadata("design:type", Number)
-], LessThanValidator$$1.prototype, "lt", void 0);
-LessThanValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[lt][formControlName],[lt][formControl],[lt][ngModel]',
-        providers: [LESS_THAN_VALIDATOR]
-    })
-], LessThanValidator$$1);
 
 var lt = function (lt) {
     return function (control) {
@@ -493,7 +493,7 @@ var LESS_THAN_EQUAL_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return LessThanEqualValidator$$1; }),
     multi: true
 };
-var LessThanEqualValidator$$1 = (function () {
+var LessThanEqualValidator$$1 = /** @class */ (function () {
     function LessThanEqualValidator$$1() {
     }
     LessThanEqualValidator$$1.prototype.ngOnInit = function () {
@@ -514,18 +514,18 @@ var LessThanEqualValidator$$1 = (function () {
     LessThanEqualValidator$$1.prototype.registerOnValidatorChange = function (fn) {
         this.onChange = fn;
     };
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", Number)
+    ], LessThanEqualValidator$$1.prototype, "lte", void 0);
+    LessThanEqualValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[lte][formControlName],[lte][formControl],[lte][ngModel]',
+            providers: [LESS_THAN_EQUAL_VALIDATOR]
+        })
+    ], LessThanEqualValidator$$1);
     return LessThanEqualValidator$$1;
 }());
-__decorate([
-    _angular_core.Input(),
-    __metadata("design:type", Number)
-], LessThanEqualValidator$$1.prototype, "lte", void 0);
-LessThanEqualValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[lte][formControlName],[lte][formControl],[lte][ngModel]',
-        providers: [LESS_THAN_EQUAL_VALIDATOR]
-    })
-], LessThanEqualValidator$$1);
 
 var lte = function (lte) {
     return function (control) {
@@ -543,7 +543,7 @@ var MAX_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return MaxValidator$$1; }),
     multi: true
 };
-var MaxValidator$$1 = (function () {
+var MaxValidator$$1 = /** @class */ (function () {
     function MaxValidator$$1() {
     }
     MaxValidator$$1.prototype.ngOnInit = function () {
@@ -564,18 +564,18 @@ var MaxValidator$$1 = (function () {
     MaxValidator$$1.prototype.registerOnValidatorChange = function (fn) {
         this.onChange = fn;
     };
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", Number)
+    ], MaxValidator$$1.prototype, "max", void 0);
+    MaxValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[max][formControlName],[max][formControl],[max][ngModel]',
+            providers: [MAX_VALIDATOR]
+        })
+    ], MaxValidator$$1);
     return MaxValidator$$1;
 }());
-__decorate([
-    _angular_core.Input(),
-    __metadata("design:type", Number)
-], MaxValidator$$1.prototype, "max", void 0);
-MaxValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[max][formControlName],[max][formControl],[max][ngModel]',
-        providers: [MAX_VALIDATOR]
-    })
-], MaxValidator$$1);
 
 var max = function (max) {
     return function (control) {
@@ -593,7 +593,7 @@ var MAX_DATE_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return MaxDateValidator$$1; }),
     multi: true
 };
-var MaxDateValidator$$1 = (function () {
+var MaxDateValidator$$1 = /** @class */ (function () {
     function MaxDateValidator$$1() {
     }
     MaxDateValidator$$1.prototype.ngOnInit = function () {
@@ -614,18 +614,18 @@ var MaxDateValidator$$1 = (function () {
     MaxDateValidator$$1.prototype.registerOnValidatorChange = function (fn) {
         this.onChange = fn;
     };
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", Object)
+    ], MaxDateValidator$$1.prototype, "maxDate", void 0);
+    MaxDateValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[maxDate][formControlName],[maxDate][formControl],[maxDate][ngModel]',
+            providers: [MAX_DATE_VALIDATOR]
+        })
+    ], MaxDateValidator$$1);
     return MaxDateValidator$$1;
 }());
-__decorate([
-    _angular_core.Input(),
-    __metadata("design:type", Object)
-], MaxDateValidator$$1.prototype, "maxDate", void 0);
-MaxDateValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[maxDate][formControlName],[maxDate][formControl],[maxDate][ngModel]',
-        providers: [MAX_DATE_VALIDATOR]
-    })
-], MaxDateValidator$$1);
 
 var maxDate = function (maxDate) {
     if (!isDate(maxDate) && !(maxDate instanceof Function)) {
@@ -648,7 +648,7 @@ var MIN_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return MinValidator$$1; }),
     multi: true
 };
-var MinValidator$$1 = (function () {
+var MinValidator$$1 = /** @class */ (function () {
     function MinValidator$$1() {
     }
     MinValidator$$1.prototype.ngOnInit = function () {
@@ -669,18 +669,18 @@ var MinValidator$$1 = (function () {
     MinValidator$$1.prototype.registerOnValidatorChange = function (fn) {
         this.onChange = fn;
     };
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", Number)
+    ], MinValidator$$1.prototype, "min", void 0);
+    MinValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[min][formControlName],[min][formControl],[min][ngModel]',
+            providers: [MIN_VALIDATOR]
+        })
+    ], MinValidator$$1);
     return MinValidator$$1;
 }());
-__decorate([
-    _angular_core.Input(),
-    __metadata("design:type", Number)
-], MinValidator$$1.prototype, "min", void 0);
-MinValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[min][formControlName],[min][formControl],[min][ngModel]',
-        providers: [MIN_VALIDATOR]
-    })
-], MinValidator$$1);
 
 var min = function (min) {
     return function (control) {
@@ -698,7 +698,7 @@ var MIN_DATE_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return MinDateValidator$$1; }),
     multi: true
 };
-var MinDateValidator$$1 = (function () {
+var MinDateValidator$$1 = /** @class */ (function () {
     function MinDateValidator$$1() {
     }
     MinDateValidator$$1.prototype.ngOnInit = function () {
@@ -719,18 +719,18 @@ var MinDateValidator$$1 = (function () {
     MinDateValidator$$1.prototype.registerOnValidatorChange = function (fn) {
         this.onChange = fn;
     };
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", Object)
+    ], MinDateValidator$$1.prototype, "minDate", void 0);
+    MinDateValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[minDate][formControlName],[minDate][formControl],[minDate][ngModel]',
+            providers: [MIN_DATE_VALIDATOR]
+        })
+    ], MinDateValidator$$1);
     return MinDateValidator$$1;
 }());
-__decorate([
-    _angular_core.Input(),
-    __metadata("design:type", Object)
-], MinDateValidator$$1.prototype, "minDate", void 0);
-MinDateValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[minDate][formControlName],[minDate][formControl],[minDate][ngModel]',
-        providers: [MIN_DATE_VALIDATOR]
-    })
-], MinDateValidator$$1);
 
 var minDate = function (minDate) {
     if (!isDate(minDate) && !(minDate instanceof Function)) {
@@ -753,7 +753,7 @@ var NOT_EQUAL_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return NotEqualValidator$$1; }),
     multi: true
 };
-var NotEqualValidator$$1 = (function () {
+var NotEqualValidator$$1 = /** @class */ (function () {
     function NotEqualValidator$$1() {
     }
     NotEqualValidator$$1.prototype.ngOnInit = function () {
@@ -774,18 +774,18 @@ var NotEqualValidator$$1 = (function () {
     NotEqualValidator$$1.prototype.registerOnValidatorChange = function (fn) {
         this.onChange = fn;
     };
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", Object)
+    ], NotEqualValidator$$1.prototype, "notEqual", void 0);
+    NotEqualValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[notEqual][formControlName],[notEqual][formControl],[notEqual][ngModel]',
+            providers: [NOT_EQUAL_VALIDATOR]
+        })
+    ], NotEqualValidator$$1);
     return NotEqualValidator$$1;
 }());
-__decorate([
-    _angular_core.Input(),
-    __metadata("design:type", Object)
-], NotEqualValidator$$1.prototype, "notEqual", void 0);
-NotEqualValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[notEqual][formControlName],[notEqual][formControl],[notEqual][ngModel]',
-        providers: [NOT_EQUAL_VALIDATOR]
-    })
-], NotEqualValidator$$1);
 
 var notEqual = function (val) {
     return function (control) {
@@ -801,7 +801,7 @@ var NOT_EQUAL_TO_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return NotEqualToValidator$$1; }),
     multi: true
 };
-var NotEqualToValidator$$1 = (function () {
+var NotEqualToValidator$$1 = /** @class */ (function () {
     function NotEqualToValidator$$1() {
     }
     NotEqualToValidator$$1.prototype.ngOnInit = function () {
@@ -810,19 +810,19 @@ var NotEqualToValidator$$1 = (function () {
     NotEqualToValidator$$1.prototype.validate = function (c) {
         return this.validator(c);
     };
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", typeof (_a = typeof _angular_forms.FormControl !== "undefined" && _angular_forms.FormControl) === "function" && _a || Object)
+    ], NotEqualToValidator$$1.prototype, "notEqualTo", void 0);
+    NotEqualToValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[notEqualTo][formControlName],[notEqualTo][formControl],[notEqualTo][ngModel]',
+            providers: [NOT_EQUAL_TO_VALIDATOR]
+        })
+    ], NotEqualToValidator$$1);
     return NotEqualToValidator$$1;
+    var _a;
 }());
-__decorate([
-    _angular_core.Input(),
-    __metadata("design:type", typeof (_a$1 = typeof _angular_forms.FormControl !== "undefined" && _angular_forms.FormControl) === "function" && _a$1 || Object)
-], NotEqualToValidator$$1.prototype, "notEqualTo", void 0);
-NotEqualToValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[notEqualTo][formControlName],[notEqualTo][formControl],[notEqualTo][ngModel]',
-        providers: [NOT_EQUAL_TO_VALIDATOR]
-    })
-], NotEqualToValidator$$1);
-var _a$1;
 
 var notEqualTo = function (notEqualControl) {
     var subscribe = false;
@@ -843,20 +843,20 @@ var NUMBER_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return NumberValidator$$1; }),
     multi: true
 };
-var NumberValidator$$1 = (function () {
+var NumberValidator$$1 = /** @class */ (function () {
     function NumberValidator$$1() {
     }
     NumberValidator$$1.prototype.validate = function (c) {
         return number(c);
     };
+    NumberValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[number][formControlName],[number][formControl],[number][ngModel]',
+            providers: [NUMBER_VALIDATOR]
+        })
+    ], NumberValidator$$1);
     return NumberValidator$$1;
 }());
-NumberValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[number][formControlName],[number][formControl],[number][ngModel]',
-        providers: [NUMBER_VALIDATOR]
-    })
-], NumberValidator$$1);
 
 var number = function (control) {
     if (isPresent(_angular_forms.Validators.required(control)))
@@ -865,21 +865,56 @@ var number = function (control) {
     return /^(?:-?\d+|-?\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/.test(v) ? null : { 'number': true };
 };
 
+var PhoneNumberTypes$$1;
+(function (PhoneNumberTypes$$1) {
+    PhoneNumberTypes$$1[PhoneNumberTypes$$1["FIXED_LINE"] = 0] = "FIXED_LINE";
+    PhoneNumberTypes$$1[PhoneNumberTypes$$1["MOBILE"] = 1] = "MOBILE";
+    // In some regions (e.g. the USA), it is impossible to distinguish between
+    // fixed-line and mobile numbers by looking at the phone number itself.
+    PhoneNumberTypes$$1[PhoneNumberTypes$$1["FIXED_LINE_OR_MOBILE"] = 2] = "FIXED_LINE_OR_MOBILE";
+    // Freephone lines
+    PhoneNumberTypes$$1[PhoneNumberTypes$$1["TOLL_FREE"] = 3] = "TOLL_FREE";
+    PhoneNumberTypes$$1[PhoneNumberTypes$$1["PREMIUM_RATE"] = 4] = "PREMIUM_RATE";
+    // The cost of this call is shared between the caller and the recipient, and
+    // is hence typically less than PREMIUM_RATE calls. See
+    // http=//en.wikipedia.org/wiki/Shared_Cost_Service for more information.
+    PhoneNumberTypes$$1[PhoneNumberTypes$$1["SHARED_COST"] = 5] = "SHARED_COST";
+    // Voice over IP numbers. This includes TSoIP (Telephony Service over IP).
+    PhoneNumberTypes$$1[PhoneNumberTypes$$1["VOIP"] = 6] = "VOIP";
+    // A personal number is associated with a particular person, and may be routed
+    // to either a MOBILE or FIXED_LINE number. Some more information can be found
+    // here= http=//en.wikipedia.org/wiki/Personal_Numbers
+    PhoneNumberTypes$$1[PhoneNumberTypes$$1["PERSONAL_NUMBER"] = 7] = "PERSONAL_NUMBER";
+    PhoneNumberTypes$$1[PhoneNumberTypes$$1["PAGER"] = 8] = "PAGER";
+    // Used for 'Universal Access Numbers' or 'Company Numbers'. They may be
+    // further routed to specific offices, but allow one number to be used for a
+    // company.
+    PhoneNumberTypes$$1[PhoneNumberTypes$$1["UAN"] = 9] = "UAN";
+    // Used for 'Voice Mail Access Numbers'.
+    PhoneNumberTypes$$1[PhoneNumberTypes$$1["VOICEMAIL"] = 10] = "VOICEMAIL";
+    // A phone number is of type UNKNOWN when it does not fit any of the known
+    // patterns for a specific region.
+    PhoneNumberTypes$$1[PhoneNumberTypes$$1["UNKNOWN"] = -1] = "UNKNOWN";
+})(PhoneNumberTypes$$1 || (PhoneNumberTypes$$1 = {}));
+
 var PHONE_VALIDATOR = {
     provide: _angular_forms.NG_VALIDATORS,
     useExisting: _angular_core.forwardRef(function () { return PhoneValidator$$1; }),
     multi: true
 };
-var PhoneValidator$$1 = (function () {
+var PhoneValidator$$1 = /** @class */ (function () {
     function PhoneValidator$$1() {
     }
     PhoneValidator$$1.prototype.ngOnInit = function () {
-        this.validator = phone(this.phone);
+        this.validator = phone$$1(this.phone, this.phoneNumberType);
     };
     PhoneValidator$$1.prototype.ngOnChanges = function (changes) {
         for (var key in changes) {
-            if (key === 'phone') {
-                this.validator = phone(changes[key].currentValue);
+            if (key === 'phoneNumberType' && typeof (this.phoneNumberType) === 'string') {
+                this.phoneNumberType = PhoneNumberTypes$$1[this.phoneNumberType];
+            }
+            if (key === 'phone' || key === 'phoneNumberType') {
+                this.validator = phone$$1(this.phone, this.phoneNumberType);
                 if (this.onChange)
                     this.onChange();
             }
@@ -891,25 +926,49 @@ var PhoneValidator$$1 = (function () {
     PhoneValidator$$1.prototype.registerOnValidatorChange = function (fn) {
         this.onChange = fn;
     };
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", String)
+    ], PhoneValidator$$1.prototype, "phone", void 0);
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", Number)
+    ], PhoneValidator$$1.prototype, "phoneNumberType", void 0);
+    PhoneValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[phone][formControlName],[phone][formControl],[phone][ngModel]',
+            providers: [PHONE_VALIDATOR]
+        })
+    ], PhoneValidator$$1);
     return PhoneValidator$$1;
 }());
-__decorate([
-    _angular_core.Input(),
-    __metadata("design:type", String)
-], PhoneValidator$$1.prototype, "phone", void 0);
-PhoneValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[phone][formControlName],[phone][formControl],[phone][ngModel]',
-        providers: [PHONE_VALIDATOR]
-    })
-], PhoneValidator$$1);
 
-var phone = function (country) {
+// import { isValidNumber, CountryCode, TelephoneNumber, getNumberType } from 'libphonenumber-js';
+// google-libphonenumber
+// Require `PhoneNumberFormat`.
+var PNF = require('google-libphonenumber').PhoneNumberFormat;
+// Get an instance of `PhoneNumberUtil`.
+var phoneUtil = require('google-libphonenumber').PhoneNumberUtil.getInstance();
+// Parse number with country code and keep raw input.
+var phone$$1 = function (country, phoneNumberType) {
     return function (control) {
         if (isPresent(_angular_forms.Validators.required(control)))
             return null;
+        var isValid = false;
         var v = control.value;
-        return libphonenumberJs.isValidNumber({ phone: v, country: country }) ? null : { phone: true };
+        try {
+            var number = phoneUtil.parse(v, country);
+            var isValidNumber = phoneUtil.isValidNumber(number);
+            var numberType = phoneUtil.getNumberType(number);
+            var region = phoneUtil.getRegionCodeForNumber(number);
+            isValid = isValidNumber && (!phoneNumberType || phoneNumberType == numberType || phoneNumberType == PhoneNumberTypes$$1.FIXED_LINE_OR_MOBILE);
+            // let isValid =  isValidNumber(v as TelephoneNumber, country as CountryCode)
+            // let a = getNumberType(v as TelephoneNumber, country as CountryCode);
+            console.log('number: ( ' + v + ' ) ' + ', valid: (' + isValid + ' )' + ', type: (' + numberType + ' )' + ', region: (' + region + ' )');
+        }
+        catch (e) {
+        }
+        return isValid ? null : { phone: true };
     };
 };
 
@@ -918,7 +977,7 @@ var RANGE_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return RangeValidator$$1; }),
     multi: true
 };
-var RangeValidator$$1 = (function () {
+var RangeValidator$$1 = /** @class */ (function () {
     function RangeValidator$$1() {
     }
     RangeValidator$$1.prototype.ngOnInit = function () {
@@ -939,18 +998,18 @@ var RangeValidator$$1 = (function () {
     RangeValidator$$1.prototype.registerOnValidatorChange = function (fn) {
         this.onChange = fn;
     };
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", Array)
+    ], RangeValidator$$1.prototype, "range", void 0);
+    RangeValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[range][formControlName],[range][formControl],[range][ngModel]',
+            providers: [RANGE_VALIDATOR]
+        })
+    ], RangeValidator$$1);
     return RangeValidator$$1;
 }());
-__decorate([
-    _angular_core.Input(),
-    __metadata("design:type", Array)
-], RangeValidator$$1.prototype, "range", void 0);
-RangeValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[range][formControlName],[range][formControl],[range][ngModel]',
-        providers: [RANGE_VALIDATOR]
-    })
-], RangeValidator$$1);
 
 var range = function (range) {
     return function (control) {
@@ -968,7 +1027,7 @@ var RANGE_LENGTH_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return RangeLengthValidator$$1; }),
     multi: true
 };
-var RangeLengthValidator$$1 = (function () {
+var RangeLengthValidator$$1 = /** @class */ (function () {
     function RangeLengthValidator$$1() {
     }
     RangeLengthValidator$$1.prototype.ngOnInit = function () {
@@ -989,18 +1048,18 @@ var RangeLengthValidator$$1 = (function () {
     RangeLengthValidator$$1.prototype.registerOnValidatorChange = function (fn) {
         this.onChange = fn;
     };
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", Array)
+    ], RangeLengthValidator$$1.prototype, "rangeLength", void 0);
+    RangeLengthValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[rangeLength][formControlName],[rangeLength][formControl],[rangeLength][ngModel]',
+            providers: [RANGE_LENGTH_VALIDATOR]
+        })
+    ], RangeLengthValidator$$1);
     return RangeLengthValidator$$1;
 }());
-__decorate([
-    _angular_core.Input(),
-    __metadata("design:type", Array)
-], RangeLengthValidator$$1.prototype, "rangeLength", void 0);
-RangeLengthValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[rangeLength][formControlName],[rangeLength][formControl],[rangeLength][ngModel]',
-        providers: [RANGE_LENGTH_VALIDATOR]
-    })
-], RangeLengthValidator$$1);
 
 var rangeLength = function (rangeLength) {
     return function (control) {
@@ -1018,20 +1077,20 @@ var URL_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return UrlValidator$$1; }),
     multi: true
 };
-var UrlValidator$$1 = (function () {
+var UrlValidator$$1 = /** @class */ (function () {
     function UrlValidator$$1() {
     }
     UrlValidator$$1.prototype.validate = function (c) {
         return url(c);
     };
+    UrlValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[url][formControlName],[url][formControl],[url][ngModel]',
+            providers: [URL_VALIDATOR]
+        })
+    ], UrlValidator$$1);
     return UrlValidator$$1;
 }());
-UrlValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[url][formControlName],[url][formControl],[url][ngModel]',
-        providers: [URL_VALIDATOR]
-    })
-], UrlValidator$$1);
 
 var url = function (control) {
     if (isPresent(_angular_forms.Validators.required(control)))
@@ -1045,7 +1104,7 @@ var UUID_VALIDATOR = {
     useExisting: _angular_core.forwardRef(function () { return UUIDValidator$$1; }),
     multi: true
 };
-var UUIDValidator$$1 = (function () {
+var UUIDValidator$$1 = /** @class */ (function () {
     function UUIDValidator$$1() {
     }
     UUIDValidator$$1.prototype.ngOnInit = function () {
@@ -1066,18 +1125,18 @@ var UUIDValidator$$1 = (function () {
     UUIDValidator$$1.prototype.registerOnValidatorChange = function (fn) {
         this.onChange = fn;
     };
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", Object)
+    ], UUIDValidator$$1.prototype, "uuid", void 0);
+    UUIDValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[uuid][formControlName],[uuid][formControl],[uuid][ngModel]',
+            providers: [UUID_VALIDATOR]
+        })
+    ], UUIDValidator$$1);
     return UUIDValidator$$1;
 }());
-__decorate([
-    _angular_core.Input(),
-    __metadata("design:type", Object)
-], UUIDValidator$$1.prototype, "uuid", void 0);
-UUIDValidator$$1 = __decorate([
-    _angular_core.Directive({
-        selector: '[uuid][formControlName],[uuid][formControl],[uuid][ngModel]',
-        providers: [UUID_VALIDATOR]
-    })
-], UUIDValidator$$1);
 
 var uuids = {
     '3': /^[0-9A-F]{8}-[0-9A-F]{4}-3[0-9A-F]{3}-[0-9A-F]{4}-[0-9A-F]{12}$/i,
@@ -1116,7 +1175,7 @@ var CustomValidators = {
     notEqual: notEqual,
     notEqualTo: notEqualTo,
     number: number,
-    phone: phone,
+    phone: phone$$1,
     range: range,
     rangeLength: rangeLength,
     url: url,
@@ -1149,19 +1208,20 @@ var CUSTOM_FORM_DIRECTIVES = [
     UrlValidator$$1,
     UUIDValidator$$1
 ];
-exports.CustomFormsModule = (function () {
+var CustomFormsModule = /** @class */ (function () {
     function CustomFormsModule() {
     }
+    CustomFormsModule = __decorate([
+        _angular_core.NgModule({
+            declarations: [CUSTOM_FORM_DIRECTIVES],
+            exports: [CUSTOM_FORM_DIRECTIVES]
+        })
+    ], CustomFormsModule);
     return CustomFormsModule;
 }());
-exports.CustomFormsModule = __decorate([
-    _angular_core.NgModule({
-        declarations: [CUSTOM_FORM_DIRECTIVES],
-        exports: [CUSTOM_FORM_DIRECTIVES]
-    })
-], exports.CustomFormsModule);
 
 exports.CustomValidators = CustomValidators;
+exports.CustomFormsModule = CustomFormsModule;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 

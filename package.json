@@ -1,6 +1,6 @@
 {
   "name": "ng2-validation-nor",
-  "version": "4.2.1",
+  "version": "4.2.15",
   "description": "angular2 validation",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -12,7 +12,8 @@
     "prerollup": "rimraf bundles",
     "rollup": "rollup -c",
     "prebuild": "rimraf dist",
-    "build": "npm run ngc && npm run rollup"
+    "build": "npm run ngc && npm run rollup",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
