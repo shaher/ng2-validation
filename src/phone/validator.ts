@@ -26,7 +26,7 @@ export const phone = (country: string, phoneNumberType: PhoneNumberTypes): Valid
       isValid = isValidNumber && (!phoneNumberType || phoneNumberType == numberType || phoneNumberType == PhoneNumberTypes.FIXED_LINE_OR_MOBILE);
       // let isValid =  isValidNumber(v as TelephoneNumber, country as CountryCode)
       // let a = getNumberType(v as TelephoneNumber, country as CountryCode);
-      console.log('number: ( ' + v + ' ) ' + ', valid: (' + isValid + ' )' + ', type: (' + numberType + ' )' + ', region: (' + region + ' )');
+      // console.log('number: ( ' + v + ' ) ' + ', valid: (' + isValid + ' )' + ', type: (' + numberType + ' )' + ', region: (' + region + ' )');
     } catch (e) {
 
     }
