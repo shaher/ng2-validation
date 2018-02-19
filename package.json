@@ -1,6 +1,6 @@
 {
-  "name": "ng2-validation",
-  "version": "4.2.0",
+  "name": "ng2-validation-nor",
+  "version": "4.2.1",
   "description": "angular2 validation",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -12,8 +12,7 @@
     "prerollup": "rimraf bundles",
     "rollup": "rollup -c",
     "prebuild": "rimraf dist",
-    "build": "npm run ngc && npm run rollup",
-    "prepublish": "npm run build"
+    "build": "npm run ngc && npm run rollup"
   },
   "repository": {
     "type": "git",
@@ -24,7 +23,7 @@
     "validate",
     "validation"
   ],
-  "author": "yuyang041060120 <yuyang041060120@gmail.com>",
+  "author": "Shaher <shaher@inorsoft.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yuyang041060120/angular2-validate/issues"
@@ -66,6 +65,6 @@
     "zone.js": "^0.8.4"
   },
   "dependencies": {
-    "libphonenumber-js": "^0.4.5"
+    "google-libphonenumber": "^3.0.12"
   }
 }
