@@ -1,3 +1,4 @@
+/*
 import { Directive, forwardRef } from '@angular/core';
 import { NG_VALIDATORS, Validator, AbstractControl } from '@angular/forms';
 
@@ -10,12 +11,12 @@ const EMAIL_VALIDATOR: any = {
 };
 
 @Directive({
-  selector: '[email][formControlName],[email][formControl],[email][ngModel]',
+  selector: '[emailValidator][formControlName],[emailValidator][formControl],[emailValidator][ngModel]',
   providers: [EMAIL_VALIDATOR]
 })
 export class EmailValidator implements Validator {
   validate(c: AbstractControl): { [key: string]: any } {
-    console.log(email(c))
     return email(c);
   }
 }
+*/

@@ -5,7 +5,7 @@ import { creditCard, CreditCardValidator } from './credit-card';
 import { date, DateValidator } from './date';
 import { dateISO, DateISOValidator } from './date-ios';
 import { digits, DigitsValidator } from './digits';
-import { email, EmailValidator } from './email';
+// import { email, EmailValidator } from './email'; email is provided by angular since version 5+
 import { equal, EqualValidator } from './equal';
 import { equalTo, EqualToValidator } from './equal-to';
 import { gt, GreaterThanValidator } from './greater-than';
@@ -13,9 +13,9 @@ import { gte, GreaterThanEqualValidator } from './greater-than-equal';
 import { json, JSONValidator } from './json';
 import { lt, LessThanValidator } from './less-than';
 import { lte, LessThanEqualValidator } from './less-than-equal';
-import { max, MaxValidator } from './max';
+import { maxValue, MaxValidator } from './max';
+import { minValue, MinValidator } from './min';
 import { maxDate, MaxDateValidator } from './max-date';
-import { min, MinValidator } from './min';
 import { minDate, MinDateValidator } from './min-date';
 import { notEqual, NotEqualValidator } from './not-equal';
 import { notEqualTo, NotEqualToValidator } from './not-equal-to';
@@ -32,7 +32,7 @@ export const CustomValidators: any = {
   date,
   dateISO,
   digits,
-  email,
+  // email,
   equal,
   equalTo,
   gt,
@@ -40,9 +40,9 @@ export const CustomValidators: any = {
   json,
   lt,
   lte,
-  max,
+  maxValue,
   maxDate,
-  min,
+  minValue,
   minDate,
   notEqual,
   notEqualTo,
@@ -60,7 +60,7 @@ const CUSTOM_FORM_DIRECTIVES = [
   DateValidator,
   DateISOValidator,
   DigitsValidator,
-  EmailValidator,
+  // EmailValidator,
   EqualValidator,
   EqualToValidator,
   GreaterThanValidator,

@@ -8,8 +8,8 @@
     "experimentalDecorators": true,
     "noEmitHelpers": false,
     "declaration": true,
-    // "rootDir": "src", // this was the original setting
-    "rootDir": "./", // needed to run dev , testing with the examples
+    "rootDir": "src", // this was the original setting, needed for npm publish
+    // "rootDir": "./", // needed to run dev , testing with the examples
     "outDir": "dist",
     "lib": [
       "es6",

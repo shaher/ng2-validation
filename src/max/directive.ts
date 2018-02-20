@@ -1,7 +1,7 @@
 import { Directive, Input, forwardRef, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { NG_VALIDATORS, Validator, ValidatorFn, AbstractControl } from '@angular/forms';
 
-import { max } from './';
+import { maxValue } from './';
 
 const MAX_VALIDATOR: any = {
   provide: NG_VALIDATORS,
@@ -10,29 +10,29 @@ const MAX_VALIDATOR: any = {
 };
 
 @Directive({
-  selector: '[max][formControlName],[max][formControl],[max][ngModel]',
+  selector: '[maxValue][formControlName],[maxValue][formControl],[maxValue][ngModel]',
   providers: [MAX_VALIDATOR]
 })
 export class MaxValidator implements Validator, OnInit, OnChanges {
-  @Input() max: number;
+  @Input() maxValue: number;
 
   private validator: ValidatorFn;
   private onChange: () => void;
 
   ngOnInit() {
-    this.validator = max(this.max);
+    this.validator = maxValue(this.maxValue);
   }
 
   ngOnChanges(changes: SimpleChanges) {
     for (let key in changes) {
-      if (key === 'max') {
-        this.validator = max(changes[key].currentValue);
+      if (key === 'maxValue') {
+        this.validator = maxValue(changes[key].currentValue);
         if (this.onChange) this.onChange();
       }
     }
   }
 
-  validate(c: AbstractControl): {[key: string]: any} {
+  validate(c: AbstractControl): { [key: string]: any } {
     return this.validator(c);
   }
 

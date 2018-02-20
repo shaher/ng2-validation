@@ -1,7 +1,7 @@
 import { Directive, Input, forwardRef, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { NG_VALIDATORS, Validator, ValidatorFn, AbstractControl } from '@angular/forms';
 
-import { min } from './';
+import { minValue } from './';
 
 const MIN_VALIDATOR: any = {
   provide: NG_VALIDATORS,
@@ -10,29 +10,29 @@ const MIN_VALIDATOR: any = {
 };
 
 @Directive({
-  selector: '[min][formControlName],[min][formControl],[min][ngModel]',
+  selector: '[minValue][formControlName],[minValue][formControl],[minValue][ngModel]',
   providers: [MIN_VALIDATOR]
 })
 export class MinValidator implements Validator, OnInit, OnChanges {
-  @Input() min: number;
+  @Input() minValue: number;
 
   private validator: ValidatorFn;
   private onChange: () => void;
 
   ngOnInit() {
-    this.validator = min(this.min);
+    this.validator = minValue(this.minValue);
   }
 
   ngOnChanges(changes: SimpleChanges) {
     for (let key in changes) {
-      if (key === 'min') {
-        this.validator = min(changes[key].currentValue);
+      if (key === 'minValue') {
+        this.validator = minValue(changes[key].currentValue);
         if (this.onChange) this.onChange();
       }
     }
   }
 
-  validate(c: AbstractControl): {[key: string]: any} {
+  validate(c: AbstractControl): { [key: string]: any } {
     return this.validator(c);
   }
 

@@ -175,12 +175,12 @@
                ngModel
                name="email"
                #email="ngModel"
-               required
-               email/>
+               [email]="!!email.value" />
         <p class="alert alert-danger"
            *ngIf="email?.errors?.email">email error</p>
         <p class="alert alert-danger"
            *ngIf="email?.errors?.required">required</p>
+        {{email?.errors|json}}
       </div>
     </div>
 

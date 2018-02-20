@@ -186,36 +186,6 @@ var digits = function (control) {
     return /^\d+$/.test(v) ? null : { digits: true };
 };
 
-var EMAIL_VALIDATOR = {
-    provide: _angular_forms.NG_VALIDATORS,
-    useExisting: _angular_core.forwardRef(function () { return EmailValidator$$1; }),
-    multi: true
-};
-var EmailValidator$$1 = /** @class */ (function () {
-    function EmailValidator$$1() {
-    }
-    EmailValidator$$1.prototype.validate = function (c) {
-        console.log(email(c));
-        return email(c);
-    };
-    EmailValidator$$1 = __decorate([
-        _angular_core.Directive({
-            selector: '[email][formControlName],[email][formControl],[email][ngModel]',
-            providers: [EMAIL_VALIDATOR]
-        })
-    ], EmailValidator$$1);
-    return EmailValidator$$1;
-}());
-
-var email = function (control) {
-    //if (isPresent(Validators.required(control))) return null;
-    var v = control.value;
-    if (!v) {
-        return null;
-    }
-    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(v) ? null : { 'email': true };
-};
-
 var EQUAL_VALIDATOR = {
     provide: _angular_forms.NG_VALIDATORS,
     useExisting: _angular_core.forwardRef(function () { return EqualValidator$$1; }),
@@ -550,12 +520,12 @@ var MaxValidator$$1 = /** @class */ (function () {
     function MaxValidator$$1() {
     }
     MaxValidator$$1.prototype.ngOnInit = function () {
-        this.validator = max(this.max);
+        this.validator = maxValue(this.maxValue);
     };
     MaxValidator$$1.prototype.ngOnChanges = function (changes) {
         for (var key in changes) {
-            if (key === 'max') {
-                this.validator = max(changes[key].currentValue);
+            if (key === 'maxValue') {
+                this.validator = maxValue(changes[key].currentValue);
                 if (this.onChange)
                     this.onChange();
             }
@@ -570,17 +540,17 @@ var MaxValidator$$1 = /** @class */ (function () {
     __decorate([
         _angular_core.Input(),
         __metadata("design:type", Number)
-    ], MaxValidator$$1.prototype, "max", void 0);
+    ], MaxValidator$$1.prototype, "maxValue", void 0);
     MaxValidator$$1 = __decorate([
         _angular_core.Directive({
-            selector: '[max][formControlName],[max][formControl],[max][ngModel]',
+            selector: '[maxValue][formControlName],[maxValue][formControl],[maxValue][ngModel]',
             providers: [MAX_VALIDATOR]
         })
     ], MaxValidator$$1);
     return MaxValidator$$1;
 }());
 
-var max = function (max) {
+var maxValue = function (max) {
     return function (control) {
         if (!isPresent(max))
             return null;
@@ -588,6 +558,56 @@ var max = function (max) {
             return null;
         var v = +control.value;
         return v <= +max ? null : { actualValue: v, requiredValue: +max, max: true };
+    };
+};
+
+var MIN_VALIDATOR = {
+    provide: _angular_forms.NG_VALIDATORS,
+    useExisting: _angular_core.forwardRef(function () { return MinValidator$$1; }),
+    multi: true
+};
+var MinValidator$$1 = /** @class */ (function () {
+    function MinValidator$$1() {
+    }
+    MinValidator$$1.prototype.ngOnInit = function () {
+        this.validator = minValue(this.minValue);
+    };
+    MinValidator$$1.prototype.ngOnChanges = function (changes) {
+        for (var key in changes) {
+            if (key === 'minValue') {
+                this.validator = minValue(changes[key].currentValue);
+                if (this.onChange)
+                    this.onChange();
+            }
+        }
+    };
+    MinValidator$$1.prototype.validate = function (c) {
+        return this.validator(c);
+    };
+    MinValidator$$1.prototype.registerOnValidatorChange = function (fn) {
+        this.onChange = fn;
+    };
+    __decorate([
+        _angular_core.Input(),
+        __metadata("design:type", Number)
+    ], MinValidator$$1.prototype, "minValue", void 0);
+    MinValidator$$1 = __decorate([
+        _angular_core.Directive({
+            selector: '[minValue][formControlName],[minValue][formControl],[minValue][ngModel]',
+            providers: [MIN_VALIDATOR]
+        })
+    ], MinValidator$$1);
+    return MinValidator$$1;
+}());
+
+var minValue = function (min) {
+    return function (control) {
+        if (!isPresent(min))
+            return null;
+        if (isPresent(_angular_forms.Validators.required(control)))
+            return null;
+        var v = +control.value;
+        return v >= +min ? null : { actualValue: v, requiredValue: +min, min: true };
     };
 };
 
@@ -643,56 +663,6 @@ var maxDate = function (maxDate) {
         if (maxDate instanceof Function)
             maxDate = maxDate();
         return d <= new Date(maxDate) ? null : { maxDate: true };
-    };
-};
-
-var MIN_VALIDATOR = {
-    provide: _angular_forms.NG_VALIDATORS,
-    useExisting: _angular_core.forwardRef(function () { return MinValidator$$1; }),
-    multi: true
-};
-var MinValidator$$1 = /** @class */ (function () {
-    function MinValidator$$1() {
-    }
-    MinValidator$$1.prototype.ngOnInit = function () {
-        this.validator = min(this.min);
-    };
-    MinValidator$$1.prototype.ngOnChanges = function (changes) {
-        for (var key in changes) {
-            if (key === 'min') {
-                this.validator = min(changes[key].currentValue);
-                if (this.onChange)
-                    this.onChange();
-            }
-        }
-    };
-    MinValidator$$1.prototype.validate = function (c) {
-        return this.validator(c);
-    };
-    MinValidator$$1.prototype.registerOnValidatorChange = function (fn) {
-        this.onChange = fn;
-    };
-    __decorate([
-        _angular_core.Input(),
-        __metadata("design:type", Number)
-    ], MinValidator$$1.prototype, "min", void 0);
-    MinValidator$$1 = __decorate([
-        _angular_core.Directive({
-            selector: '[min][formControlName],[min][formControl],[min][ngModel]',
-            providers: [MIN_VALIDATOR]
-        })
-    ], MinValidator$$1);
-    return MinValidator$$1;
-}());
-
-var min = function (min) {
-    return function (control) {
-        if (!isPresent(min))
-            return null;
-        if (isPresent(_angular_forms.Validators.required(control)))
-            return null;
-        var v = +control.value;
-        return v >= +min ? null : { actualValue: v, requiredValue: +min, min: true };
     };
 };
 
@@ -1157,13 +1127,14 @@ var uuid = function (version) {
     };
 };
 
+// import { email, EmailValidator } from './email'; email is provided by angular since version 5+
 var CustomValidators = {
     base64: base64,
     creditCard: creditCard,
     date: date,
     dateISO: dateISO,
     digits: digits,
-    email: email,
+    // email,
     equal: equal,
     equalTo: equalTo,
     gt: gt,
@@ -1171,9 +1142,9 @@ var CustomValidators = {
     json: json,
     lt: lt,
     lte: lte,
-    max: max,
+    maxValue: maxValue,
     maxDate: maxDate,
-    min: min,
+    minValue: minValue,
     minDate: minDate,
     notEqual: notEqual,
     notEqualTo: notEqualTo,
@@ -1190,7 +1161,7 @@ var CUSTOM_FORM_DIRECTIVES = [
     DateValidator$$1,
     DateISOValidator$$1,
     DigitsValidator$$1,
-    EmailValidator$$1,
+    // EmailValidator,
     EqualValidator$$1,
     EqualToValidator$$1,
     GreaterThanValidator$$1,
