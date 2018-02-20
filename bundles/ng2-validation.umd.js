@@ -195,6 +195,7 @@ var EmailValidator$$1 = /** @class */ (function () {
     function EmailValidator$$1() {
     }
     EmailValidator$$1.prototype.validate = function (c) {
+        console.log(email(c));
         return email(c);
     };
     EmailValidator$$1 = __decorate([
@@ -207,9 +208,11 @@ var EmailValidator$$1 = /** @class */ (function () {
 }());
 
 var email = function (control) {
-    if (isPresent(_angular_forms.Validators.required(control)))
-        return null;
+    //if (isPresent(Validators.required(control))) return null;
     var v = control.value;
+    if (!v) {
+        return null;
+    }
     return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(v) ? null : { 'email': true };
 };
 
